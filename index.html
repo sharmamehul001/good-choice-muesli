@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Good Choice Crunchy Muesli</title>
+<title>Good Choice | Crunchy Muesli</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,69 +13,65 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:'Montserrat',sans-serif;
 }
 
 body{
-    background: linear-gradient(135deg,#ffe6ef,#fff);
+    background:#fff;
     color:#333;
 }
 
+/* HEADER */
 header{
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    background:#a0144f;
+    padding:25px;
+    text-align:center;
 }
 
-.logo{
-    font-size:28px;
-    font-weight:700;
-    color:#a0144f;
+header h1{
+    font-size:48px;
+    color:white;
+    letter-spacing:2px;
 }
 
-nav a{
-    text-decoration:none;
-    margin-left:20px;
-    font-weight:500;
-    color:#333;
-    transition:0.3s;
+header p{
+    color:#ffd9e8;
+    font-size:16px;
+    margin-top:5px;
 }
 
-nav a:hover{
-    color:#a0144f;
-}
-
+/* HERO */
 .hero{
-    padding:60px 8%;
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    justify-content:center;
     flex-wrap:wrap;
+    padding:60px 8%;
+    background:linear-gradient(135deg,#ffe6ef,#fff);
 }
 
 .hero-text{
-    max-width:500px;
+    max-width:550px;
 }
 
-.hero-text h1{
-    font-size:42px;
+.hero-text h2{
+    font-size:40px;
     color:#a0144f;
 }
 
 .hero-text p{
     margin:20px 0;
-    line-height:1.6;
+    line-height:1.7;
 }
 
 .btn{
-    padding:12px 28px;
+    padding:14px 32px;
     background:#a0144f;
     color:white;
     border:none;
-    border-radius:30px;
-    cursor:pointer;
+    border-radius:40px;
     font-size:16px;
+    cursor:pointer;
     transition:0.3s;
 }
 
@@ -85,43 +81,51 @@ nav a:hover{
 }
 
 .hero img{
-    width:350px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    width:380px;
+    margin-top:30px;
+    border-radius:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.25);
 }
 
+/* SECTION */
 .section{
-    padding:60px 8%;
+    padding:70px 8%;
     text-align:center;
 }
 
 .section h2{
-    font-size:32px;
+    font-size:34px;
     margin-bottom:30px;
     color:#a0144f;
 }
 
-.cards{
+/* BENEFITS */
+.benefits{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    gap:25px;
+    gap:30px;
 }
 
 .card{
-    background:rgba(255,255,255,0.6);
-    backdrop-filter:blur(10px);
-    padding:25px;
-    width:250px;
+    background:#fff;
+    padding:30px;
+    width:260px;
     border-radius:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
     transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
 }
 
+.card h3{
+    margin-bottom:15px;
+    color:#a0144f;
+}
+
+/* NUTRITION */
 table{
     margin:auto;
     border-collapse:collapse;
@@ -130,29 +134,45 @@ table{
 }
 
 td{
+    padding:14px;
     border:1px solid #ddd;
-    padding:12px;
 }
 
 tr:nth-child(even){
     background:#ffe3ec;
 }
 
+/* GALLERY */
+.gallery{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.gallery img{
+    width:320px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
 footer{
     background:#a0144f;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:25px;
     margin-top:50px;
 }
 
+/* MOBILE */
 @media(max-width:768px){
+    header h1{
+        font-size:34px;
+    }
     .hero{
         flex-direction:column;
         text-align:center;
-    }
-    .hero img{
-        margin-top:30px;
     }
 }
 
@@ -162,49 +182,57 @@ footer{
 <body>
 
 <header>
-    <div class="logo">GOOD CHOICE</div>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Nutrition</a>
-        <a href="#">Benefits</a>
-        <a href="#">Contact</a>
-    </nav>
+    <h1>GOOD CHOICE</h1>
+    <p>Crunchy Muesli | Dry Fruits with Cranberry & Strawberry Flavour</p>
 </header>
 
 <section class="hero">
-    <div class="hero-text">
-        <h1>Crunchy Muesli</h1>
-        <p>Dry Fruits with Cranberry & Strawberry Flavour. 
-        High Fibre, High Protein, Multi-Grain breakfast to power your day.</p>
-        <button class="btn">Order Now</button>
-    </div>
-    <img src="muesli.png" alt="Good Choice Muesli">
+
+<div class="hero-text">
+    <h2>Power Packed Healthy Breakfast</h2>
+    <p>
+        Good Choice Crunchy Muesli is a multi-grain breakfast cereal made with 
+        rolled oats, wheat flakes, almonds, chia seeds, pumpkin seeds, cranberry 
+        and dried fruits. Rich in fibre, protein and omega 3 to keep you active 
+        and energetic throughout the day.
+    </p>
+    <button class="btn">Order Now</button>
+</div>
+
+<img src="front.jpg" alt="Good Choice Muesli Front">
+
 </section>
 
 <section class="section">
-    <h2>Why Choose Our Muesli?</h2>
-    <div class="cards">
+    <h2>Why Choose Good Choice?</h2>
+
+    <div class="benefits">
         <div class="card">
-            <h3>💪 High Energy</h3>
-            <p>409 Kcal energy packed breakfast to keep you active all day.</p>
+            <h3>💪 409 Kcal Energy</h3>
+            <p>Perfect morning fuel for long lasting energy.</p>
         </div>
+
         <div class="card">
-            <h3>🌾 Rich in Fibre</h3>
-            <p>13.24g dietary fibre supports digestion & gut health.</p>
+            <h3>🌾 13.24g Fibre</h3>
+            <p>Improves digestion and supports gut health.</p>
         </div>
+
         <div class="card">
-            <h3>❤️ Heart Friendly</h3>
-            <p>Omega 3 (3.49g) & nuts help maintain heart health.</p>
+            <h3>❤️ Omega 3 - 3.49g</h3>
+            <p>Supports heart health and overall wellness.</p>
         </div>
+
         <div class="card">
             <h3>🌿 100% Natural</h3>
-            <p>No artificial colors. Made with natural ingredients.</p>
+            <p>No artificial colours. Multi-grain nutrition.</p>
         </div>
     </div>
+
 </section>
 
 <section class="section">
     <h2>Nutrition Value (Per 100g)</h2>
+
     <table>
         <tr><td>Energy</td><td>409.86 Kcal</td></tr>
         <tr><td>Total Fat</td><td>8.30g</td></tr>
@@ -214,6 +242,7 @@ footer{
         <tr><td>Omega 3</td><td>3.49g</td></tr>
         <tr><td>Vitamin B6</td><td>0.69mg</td></tr>
     </table>
+
 </section>
 
 <section class="section">
@@ -221,8 +250,16 @@ footer{
     <p>
         Wheat Flakes, Corn Flakes, Rolled Oats, Chia Seeds, Pumpkin Seeds,
         California Almonds, Raisins, Cranberry, Barley Seeds,
-        Sunflower Seeds, Dried Papaya & Natural Antioxidants.
+        Sunflower Seeds, Dried Papaya, Natural Antioxidant.
     </p>
+</section>
+
+<section class="section">
+    <h2>Product View</h2>
+    <div class="gallery">
+        <img src="front.jpg" alt="Front View">
+        <img src="back.jpg" alt="Back View">
+    </div>
 </section>
 
 <footer>
