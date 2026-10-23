@@ -3,268 +3,424 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Good Choice | Crunchy Muesli</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
-
+<meta name="theme-color" content="#481126">
+<meta name="description" content="Discover Good Choice Crunchy Muesli — a colourful blend of grains, nuts, seeds and fruity flavours.">
+<title>Good Choice | Premium Crunchy Muesli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Montserrat',sans-serif;
+:root{--wine:#861b43;--deep:#481126;--pink:#f6dce5;--cream:#fff9f2;--gold:#d5a45b;--text:#38232a;--muted:#806872;--line:#ead9df;--white:#fff;--shadow:0 18px 50px #48112612}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+body.no-scroll{overflow:hidden}
+a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #d5a45b;outline-offset:3px}
+img{max-width:100%}
+.skip-link{position:absolute;left:-999px;top:8px;background:white;padding:12px;z-index:100}
+.skip-link:focus{left:8px}
+.announcement{background:var(--deep);color:#f9e9ef;text-align:center;padding:9px 15px;font-size:11px;letter-spacing:.7px}
+nav{height:78px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;gap:22px;position:sticky;top:0;z-index:30;background:#fff9f2eF;backdrop-filter:blur(18px);border-bottom:1px solid #ead9d9}
+.logo{font-size:20px;font-weight:800;letter-spacing:1.7px;color:var(--wine);white-space:nowrap}.logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:27px;font-size:12px;font-weight:700}.nav-links a:not(.nav-cta):hover{color:var(--wine)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.icon-btn{width:42px;height:42px;border:1px solid var(--line);background:#fff;border-radius:50%;display:grid;place-items:center;position:relative;color:var(--deep);transition:.2s}
+.icon-btn:hover{border-color:var(--wine);transform:translateY(-2px)}
+.cart-count{position:absolute;right:-4px;top:-4px;background:var(--wine);color:white;font-size:10px;font-weight:800;min-width:19px;height:19px;border-radius:20px;display:grid;place-items:center;padding:0 4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 23px;border:0;border-radius:50px;background:var(--wine);color:white;font-size:12px;font-weight:800;box-shadow:0 9px 22px #861b4330;transition:transform .25s,background .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);background:var(--deep);box-shadow:0 15px 30px #861b4340}
+.btn-light{background:white;color:var(--wine);border:1px solid var(--line);box-shadow:none}.btn-light:hover{background:#fff4f7;color:var(--deep)}
+.btn-small{padding:11px 17px}
+.menu-toggle{display:none}
+.hero{min-height:610px;padding:64px 8%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 80% 40%,#f2c5d5 0,transparent 42%),linear-gradient(125deg,#fffaf4,#f8e5e8)}
+.hero:before{content:"";position:absolute;width:430px;height:430px;right:5%;top:13%;border-radius:50%;border:1px solid #ffffffa0;box-shadow:0 0 0 35px #ffffff30,0 0 0 75px #ffffff18;pointer-events:none}
+.hero-text,.visual{position:relative;z-index:1}
+.eyebrow{color:var(--wine);text-transform:uppercase;font-size:10px;letter-spacing:2.7px;font-weight:800;margin-bottom:19px}
+.hero h1,.section h2,.final-cta h2{font-family:'Playfair Display',serif}
+.hero h1{font-size:clamp(43px,5.2vw,72px);line-height:1.06;letter-spacing:-1.7px;max-width:590px}
+.hero h1 em{color:var(--wine);font-style:normal}
+.hero-copy{font-size:14px;line-height:1.9;max-width:460px;color:#755b63;margin:23px 0}
+.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+.secondary-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border:1px solid #d8b5c1;border-radius:50px;font-size:12px;font-weight:800;transition:.25s}
+.secondary-btn:hover{background:white;transform:translateY(-3px)}
+.mini-points{display:flex;flex-wrap:wrap;gap:17px;margin-top:29px;font-size:10px;color:#785d66;font-weight:700}
+.visual{display:flex;align-items:center;justify-content:center;min-height:460px;perspective:1000px}
+.orbit{position:absolute;width:350px;height:350px;border:1px solid #ffffffd0;border-radius:50%;box-shadow:inset 0 0 40px #ffffff55}
+.orbit:before{content:"";position:absolute;inset:22px;border:1px dashed #b75a7a55;border-radius:50%}
+.product-wrap{width:min(72%,330px);position:relative;z-index:2;animation:float 5s ease-in-out infinite;transition:transform .25s}
+.product-wrap img{width:100%;max-height:430px;display:block;object-fit:contain;filter:drop-shadow(18px 30px 20px #5d1b3535);border-radius:14px}
+.product-placeholder{display:none;min-height:300px;background:linear-gradient(145deg,#fff,#f6dce5);border:1px solid white;border-radius:20px;padding:30px 20px;text-align:center;color:var(--wine);box-shadow:18px 25px 40px #48112625;align-content:center}
+.product-placeholder .grain{font-size:54px}.product-placeholder h2{font:800 23px 'Playfair Display',serif;margin:13px 0 5px}
+.float-label{position:absolute;z-index:3;padding:12px 15px;background:#ffffffdf;backdrop-filter:blur(12px);border:1px solid white;border-radius:15px;box-shadow:0 12px 35px #60223b18;font-size:10px;font-weight:800}
+.float-label small{display:block;margin-top:4px;color:#967581;font-weight:500}.label-one{top:13%;left:0}.label-two{right:0;bottom:16%}
+.trust-strip{display:grid;grid-template-columns:repeat(3,1fr);padding:22px 8%;background:white;border-bottom:1px solid #f0e3e6}
+.trust-item{display:flex;justify-content:center;align-items:center;gap:10px;color:#72545f;font-size:11px;font-weight:700;text-align:center}.trust-item strong{display:block;color:var(--wine);font-size:12px}
+.section{padding:86px 8%}
+.section-head{text-align:center;max-width:650px;margin:0 auto 42px}
+.section-head .eyebrow{margin-bottom:12px}
+.section h2,.final-cta h2{font-size:clamp(30px,4vw,45px);line-height:1.18}
+.section-head p{margin-top:14px;color:var(--muted);line-height:1.8;font-size:13px}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.benefit{padding:27px 22px;background:linear-gradient(145deg,#fff,#fff5f5);border:1px solid #f0dfe4;border-radius:22px;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s}
+.benefit:hover{transform:translateY(-7px);box-shadow:0 20px 35px #6c24301a}
+.benefit-icon{width:48px;height:48px;border-radius:15px;background:var(--pink);display:grid;place-items:center;font-size:22px;margin-bottom:21px}
+.benefit h3{color:var(--wine);font-size:14px;margin-bottom:9px}.benefit p{color:var(--muted);font-size:11px;line-height:1.8}
+.nutrition{background:linear-gradient(130deg,#4b1228,#851d46);color:white;position:relative;overflow:hidden}
+.nutrition:before{content:"";position:absolute;width:450px;height:450px;border:1px solid #ffffff18;border-radius:50%;right:-100px;top:-180px;box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff05}
+.nutrition .section-head,.nutrition-layout{position:relative}.nutrition .section-head p{color:#e5c5d0}.nutrition .eyebrow{color:#f3c781}
+.nutrition-layout{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:48px;max-width:950px;margin:auto}
+.nutri-card{padding:30px;border:1px solid #ffffff30;border-radius:24px;background:linear-gradient(145deg,#ffffff18,#ffffff08);backdrop-filter:blur(15px);box-shadow:0 25px 50px #20071330}
+.nutri-card .big-number{font:68px/1.1 'Playfair Display',serif;color:#f5d29d;letter-spacing:-2px}.nutri-card p{font-size:12px;color:#f0dce4;margin-top:10px;line-height:1.8}
+.serving-control{margin-top:22px;padding-top:19px;border-top:1px solid #ffffff25}
+.serving-control label{font-size:11px;color:#f0dce4;display:block;margin-bottom:10px}
+.serving-row{display:flex;align-items:center;gap:10px}.serving-row input{width:100%;accent-color:var(--gold)}
+.serving-output{font-weight:800;color:#f7d49c;font-size:12px;white-space:nowrap}
+.nutri-table{width:100%;border-collapse:collapse;font-size:12px}.nutri-table td{padding:13px 9px;border-bottom:1px solid #ffffff25}.nutri-table td:last-child{text-align:right;color:#f7d49c;font-weight:800}.nutri-table tr:last-child td{border-bottom:none}
+.note{font-size:10px;color:#e5c5d0;margin-top:16px;line-height:1.7}
+.ingredients{background:#fffaf5}
+.ingredient-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:920px;margin:auto}
+.ingredient{padding:19px;border-radius:17px;background:white;border:1px solid #f0e2df;display:flex;align-items:center;gap:13px;box-shadow:0 8px 20px #60223b08;transition:.25s}
+.ingredient:hover{transform:translateY(-4px);border-color:#dca5b8}.ingredient span{font-size:25px}.ingredient h3{font-size:12px}.ingredient p{font-size:10px;color:#947983;margin-top:4px}
+.gallery{background:#f6e5e9}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:auto}
+.gallery-card{background:white;padding:14px;border-radius:23px;box-shadow:0 20px 45px #60223b15;transition:transform .3s;overflow:hidden}
+.gallery-card:hover{transform:translateY(-5px)}
+.gallery-image{height:330px;background:#fffaf7;border-radius:15px;display:grid;place-items:center;overflow:hidden;position:relative}
+.gallery-image img{width:100%;height:100%;object-fit:contain;transition:transform .35s}
+.gallery-card:hover .gallery-image img{transform:scale(1.025)}
+.gallery-placeholder{display:none;text-align:center;color:var(--wine);padding:20px}.gallery-placeholder span{font-size:40px;display:block;margin-bottom:8px}
+.gallery-card h3{padding:16px 8px 6px;font-size:13px;color:var(--wine)}.gallery-card p{padding:0 8px 8px;color:#90747d;font-size:11px}
+.gallery-tools{display:flex;gap:8px;padding:0 8px 8px}.gallery-tools button{border:1px solid var(--line);background:white;border-radius:30px;padding:8px 12px;font-size:10px;font-weight:700;color:var(--wine)}.gallery-tools button:hover{background:var(--pink)}
+.faq{background:#fffaf5}
+.faq-list{max-width:760px;margin:auto;display:grid;gap:10px}
+.faq-item{border:1px solid var(--line);border-radius:15px;background:white;overflow:hidden}
+.faq-question{width:100%;border:0;background:transparent;padding:18px 20px;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:18px;color:var(--deep);font-size:13px;font-weight:800}
+.faq-question span:last-child{font-size:20px;color:var(--wine);transition:transform .2s}
+.faq-answer{display:none;padding:0 20px 18px;color:var(--muted);font-size:12px;line-height:1.8}.faq-item.open .faq-answer{display:block}.faq-item.open .faq-question span:last-child{transform:rotate(45deg)}
+.final-cta{text-align:center;padding:82px 8%;background:radial-gradient(ellipse at 50% 120%,#b93b6a40,transparent 55%),#fffaf5}
+.final-cta p{color:var(--muted);font-size:13px;margin:17px auto 24px;line-height:1.8;max-width:540px}
+footer{padding:30px 8%;background:#35101f;color:#f9e9ef;display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}
+footer .logo{color:white}footer p{font-size:10px;color:#d9b9c6}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);background:var(--deep);color:white;padding:13px 19px;border-radius:40px;box-shadow:0 12px 35px #0002;font-size:12px;font-weight:700;z-index:80;opacity:0;pointer-events:none;transition:.25s;max-width:90vw;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+.back-top{position:fixed;right:18px;bottom:20px;width:43px;height:43px;border:0;border-radius:50%;background:var(--wine);color:white;font-size:18px;box-shadow:0 8px 20px #48112630;opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s;z-index:20}.back-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.overlay{position:fixed;inset:0;background:#1d0812a6;z-index:60;opacity:0;pointer-events:none;transition:opacity .25s}.overlay.show{opacity:1;pointer-events:auto}
+.cart-drawer{position:fixed;z-index:70;top:0;right:0;width:min(430px,100%);height:100dvh;background:var(--cream);box-shadow:-15px 0 50px #0002;transform:translateX(105%);transition:transform .3s;display:flex;flex-direction:column}
+.cart-drawer.open{transform:translateX(0)}
+.cart-head{padding:22px 22px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.cart-head h2{font:700 25px 'Playfair Display',serif;color:var(--deep)}.close-cart{border:0;background:white;border:1px solid var(--line);border-radius:50%;width:38px;height:38px;font-size:22px;color:var(--wine)}
+.cart-body{padding:20px;overflow:auto;flex:1}.cart-empty{text-align:center;padding:55px 15px;color:var(--muted)}.cart-empty .empty-icon{font-size:43px;margin-bottom:14px}.cart-empty h3{color:var(--deep);font:700 23px 'Playfair Display',serif;margin-bottom:8px}.cart-empty p{font-size:12px;line-height:1.7}
+.cart-item{display:grid;grid-template-columns:76px 1fr auto;gap:13px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}
+.cart-thumb{height:82px;background:#f6e5e9;border-radius:12px;display:grid;place-items:center;font-size:29px;overflow:hidden}.cart-thumb img{height:100%;width:100%;object-fit:contain}
+.cart-item h3{font-size:12px;color:var(--deep);margin-bottom:5px}.cart-item p{font-size:11px;color:var(--muted)}
+.qty-control{display:flex;align-items:center;gap:10px;margin-top:10px}.qty-control button{width:25px;height:25px;border:1px solid var(--line);background:white;border-radius:50%;color:var(--wine);font-weight:800}.qty-control span{font-size:12px;font-weight:800;min-width:12px;text-align:center}
+.remove-item{border:0;background:transparent;color:#a65b72;font-size:10px;text-decoration:underline;margin-top:6px}
+.cart-foot{padding:19px 22px 23px;border-top:1px solid var(--line);background:white}.subtotal{display:flex;justify-content:space-between;font-size:14px;font-weight:800;margin-bottom:8px}.cart-foot p{font-size:10px;color:var(--muted);line-height:1.6;margin-bottom:14px}.cart-foot .btn{width:100%}
+.checkout-note{display:none;background:#fff1dc;color:#704d18;padding:12px;border-radius:10px;font-size:11px;line-height:1.6;margin-top:12px}.checkout-note.show{display:block}
+@keyframes float{0%,100%{transform:translateY(0) rotateZ(-1.5deg)}50%{transform:translateY(-14px) rotateZ(1.5deg)}}
+@media(max-width:900px){nav{padding:0 5%}.nav-links{gap:16px}.hero{padding:52px 6%}.benefits{grid-template-columns:repeat(2,1fr)}.nutrition-layout{gap:25px}.section{padding:75px 6%}}
+@media(max-width:680px){
+ .announcement{font-size:9px}.menu-toggle{display:grid}.nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:16px 6% 22px;background:var(--cream);border-bottom:1px solid var(--line);box-shadow:0 15px 25px #48112612;align-items:stretch;gap:0}
+ .nav-links.open{display:flex;flex-direction:column}.nav-links a:not(.nav-cta){display:block;padding:13px 3px;border-bottom:1px solid #f0e3e6}.nav-links .nav-cta{margin-top:13px;text-align:center}
+ nav{height:68px}.logo{font-size:17px}.nav-actions{gap:7px}.icon-btn{width:38px;height:38px}.nav-actions .btn{display:none}
+ .hero{grid-template-columns:1fr;text-align:center;padding:49px 7% 22px;gap:0}.hero h1{margin:auto;font-size:clamp(42px,11vw,54px)}.hero-copy{margin:19px auto;font-size:13px}.hero-actions,.mini-points{justify-content:center}.mini-points{gap:10px;font-size:9px}.visual{min-height:365px}.orbit{width:275px;height:275px}.product-wrap{width:65%}.product-wrap img{max-height:360px}.label-one{left:-2%;top:11%}.label-two{right:-2%;bottom:11%}.float-label{font-size:9px;padding:10px 11px}
+ .trust-strip{padding:18px 4%;gap:9px}.trust-item{font-size:9px;gap:5px;flex-direction:column}.trust-item strong{font-size:10px}
+ .section{padding:62px 6%}.benefits{gap:11px}.benefit{padding:20px 15px}.benefit-icon{width:42px;height:42px;margin-bottom:16px}.benefit h3{font-size:12px}.benefit p{font-size:10px}
+ .nutrition-layout{grid-template-columns:1fr}.nutri-card .big-number{font-size:57px}.ingredient-grid{grid-template-columns:repeat(2,1fr);gap:9px}.ingredient{padding:14px 10px;gap:8px}.ingredient span{font-size:20px}.ingredient h3{font-size:10px}.ingredient p{font-size:9px}
+ .gallery-grid{grid-template-columns:1fr;gap:16px}.gallery-image{height:300px}footer{justify-content:center;text-align:center;flex-direction:column}
 }
-
-body{
-    background:#fff;
-    color:#333;
-}
-
-/* HEADER */
-header{
-    background:#a0144f;
-    padding:25px;
-    text-align:center;
-}
-
-header h1{
-    font-size:48px;
-    color:white;
-    letter-spacing:2px;
-}
-
-header p{
-    color:#ffd9e8;
-    font-size:16px;
-    margin-top:5px;
-}
-
-/* HERO */
-.hero{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-wrap:wrap;
-    padding:60px 8%;
-    background:linear-gradient(135deg,#ffe6ef,#fff);
-}
-
-.hero-text{
-    max-width:550px;
-}
-
-.hero-text h2{
-    font-size:40px;
-    color:#a0144f;
-}
-
-.hero-text p{
-    margin:20px 0;
-    line-height:1.7;
-}
-
-.btn{
-    padding:14px 32px;
-    background:#a0144f;
-    color:white;
-    border:none;
-    border-radius:40px;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#7d0f3c;
-    transform:scale(1.05);
-}
-
-.hero img{
-    width:380px;
-    margin-top:30px;
-    border-radius:25px;
-    box-shadow:0 20px 50px rgba(0,0,0,0.25);
-}
-
-/* SECTION */
-.section{
-    padding:70px 8%;
-    text-align:center;
-}
-
-.section h2{
-    font-size:34px;
-    margin-bottom:30px;
-    color:#a0144f;
-}
-
-/* BENEFITS */
-.benefits{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:30px;
-}
-
-.card{
-    background:#fff;
-    padding:30px;
-    width:260px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card h3{
-    margin-bottom:15px;
-    color:#a0144f;
-}
-
-/* NUTRITION */
-table{
-    margin:auto;
-    border-collapse:collapse;
-    width:90%;
-    max-width:600px;
-}
-
-td{
-    padding:14px;
-    border:1px solid #ddd;
-}
-
-tr:nth-child(even){
-    background:#ffe3ec;
-}
-
-/* GALLERY */
-.gallery{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:30px;
-}
-
-.gallery img{
-    width:320px;
-    border-radius:20px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.2);
-}
-
-/* FOOTER */
-footer{
-    background:#a0144f;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:50px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-    header h1{
-        font-size:34px;
-    }
-    .hero{
-        flex-direction:column;
-        text-align:center;
-    }
-}
-
+@media(max-width:380px){.hero h1{font-size:39px}.ingredient-grid{grid-template-columns:1fr}.label-one{left:-4%}.label-two{right:-4%}.float-label{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
-
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="announcement">A LITTLE CRUNCH. A LOT OF GOODNESS. <span aria-hidden="true">✦</span> YOUR MORNING, REIMAGINED.</div>
+<nav aria-label="Main navigation">
+  <a href="#home" class="logo" aria-label="Good Choice home">GOOD <span>CHOICE.</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#benefits">Benefits</a><a href="#nutrition">Nutrition</a><a href="#ingredients">Ingredients</a><a href="#product">Product</a>
+    <a href="#product" class="btn btn-small nav-cta">Explore blend ↗</a>
+  </div>
+  <div class="nav-actions">
+    <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    <button class="icon-btn" id="cartOpen" aria-label="Open shopping cart">🛍<span class="cart-count" id="cartCount">0</span></button>
+    <a href="#product" class="btn btn-small">Discover ↗</a>
+  </div>
+</nav>
 
-<header>
-    <h1>GOOD CHOICE</h1>
-    <p>Crunchy Muesli | Dry Fruits with Cranberry & Strawberry Flavour</p>
-</header>
+<main id="main">
+<section class="hero" id="home">
+  <div class="hero-text">
+    <div class="eyebrow">A better start to your day</div>
+    <h1>Make mornings<br>feel <em>extraordinary.</em></h1>
+    <p class="hero-copy">Meet Good Choice Crunchy Muesli — a delicious blend of grains, nuts, seeds and fruity flavours to bring a little goodness to your everyday breakfast.</p>
+    <div class="hero-actions"><a href="#product" class="btn">Discover the blend ↗</a><a href="#nutrition" class="secondary-btn">Explore nutrition</a></div>
+    <div class="mini-points"><span>✦ Multigrain goodness</span><span>✦ Nuts & seeds</span><span>✦ Fruity crunch</span></div>
+  </div>
+  <div class="visual">
+    <div class="orbit" aria-hidden="true"></div>
+    <div class="float-label label-one">🌾 Multigrain blend<small>Made for breakfast moments</small></div>
+    <div class="product-wrap">
+      <img class="main-product-image" src="front.jpg" alt="Good Choice Crunchy Muesli front pack" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+      <div class="product-placeholder"><div class="grain">🌾🍓</div><h2>GOOD CHOICE</h2><p>Crunchy Muesli</p><small>Place your front.jpg pack image beside this HTML file.</small></div>
+    </div>
+    <div class="float-label label-two">🍓 Fruity flavour<small>Cranberry & strawberry</small></div>
+  </div>
+</section>
 
-<section class="hero">
-
-<div class="hero-text">
-    <h2>Power Packed Healthy Breakfast</h2>
-    <p>
-        Good Choice Crunchy Muesli is a multi-grain breakfast cereal made with 
-        rolled oats, wheat flakes, almonds, chia seeds, pumpkin seeds, cranberry 
-        and dried fruits. Rich in fibre, protein and omega 3 to keep you active 
-        and energetic throughout the day.
-    </p>
-    <button class="btn">Order Now</button>
+<div class="trust-strip" aria-label="Product highlights">
+  <div class="trust-item"><span>🌾</span><div><strong>Grain blend</strong>Everyday crunch</div></div>
+  <div class="trust-item"><span>🌱</span><div><strong>Nuts & seeds</strong>Texture in every bite</div></div>
+  <div class="trust-item"><span>🍓</span><div><strong>Fruity notes</strong>A colourful breakfast</div></div>
 </div>
 
-<img src="front.jpg" alt="Good Choice Muesli Front">
-
+<section class="section reveal" id="benefits">
+  <div class="section-head"><div class="eyebrow">The goodness inside</div><h2>Your breakfast, beautifully upgraded.</h2><p>A colourful combination of grains, dried fruits, nuts and seeds for a satisfying breakfast experience.</p></div>
+  <div class="benefits">
+    <article class="benefit"><div class="benefit-icon">⚡</div><h3>409.86 kcal energy</h3><p>Energy value per 100 g, based on the nutrition data supplied for this page.</p></article>
+    <article class="benefit"><div class="benefit-icon">🌾</div><h3>13.24 g fibre</h3><p>Dietary fibre contributes to a balanced diet and supports normal digestive function.</p></article>
+    <article class="benefit"><div class="benefit-icon">🌱</div><h3>Seeds & nuts</h3><p>A blend featuring chia, pumpkin and sunflower seeds, plus almonds.</p></article>
+    <article class="benefit"><div class="benefit-icon">🍓</div><h3>Fruity crunch</h3><p>A blend featuring cranberry, raisins and dried papaya.</p></article>
+  </div>
 </section>
 
-<section class="section">
-    <h2>Why Choose Good Choice?</h2>
-
-    <div class="benefits">
-        <div class="card">
-            <h3>💪 409 Kcal Energy</h3>
-            <p>Perfect morning fuel for long lasting energy.</p>
-        </div>
-
-        <div class="card">
-            <h3>🌾 13.24g Fibre</h3>
-            <p>Improves digestion and supports gut health.</p>
-        </div>
-
-        <div class="card">
-            <h3>❤️ Omega 3 - 3.49g</h3>
-            <p>Supports heart health and overall wellness.</p>
-        </div>
-
-        <div class="card">
-            <h3>🌿 100% Natural</h3>
-            <p>No artificial colours. Multi-grain nutrition.</p>
-        </div>
+<section class="section nutrition" id="nutrition">
+  <div class="section-head"><div class="eyebrow">Know your food</div><h2>Nutrition at a glance.</h2><p>Explore the nutrition values provided for every 100 g. Adjust the serving size to see estimated values.</p></div>
+  <div class="nutrition-layout">
+    <div class="nutri-card">
+      <div class="eyebrow">Energy per serving</div><div class="big-number"><span id="energyValue">205</span></div>
+      <p>kcal for your selected serving<br>Use the slider to explore portions.</p>
+      <div class="serving-control"><label for="servingSize">Serving size: <strong><span id="servingLabel">50</span> g</strong></label><div class="serving-row"><input id="servingSize" type="range" min="25" max="100" step="5" value="50"><span class="serving-output" id="servingRatio">½ of 100 g</span></div></div>
     </div>
-
-</section>
-
-<section class="section">
-    <h2>Nutrition Value (Per 100g)</h2>
-
-    <table>
-        <tr><td>Energy</td><td>409.86 Kcal</td></tr>
-        <tr><td>Total Fat</td><td>8.30g</td></tr>
-        <tr><td>Carbohydrates</td><td>75.79g</td></tr>
-        <tr><td>Total Sugar</td><td>14.39g</td></tr>
-        <tr><td>Dietary Fibre</td><td>13.24g</td></tr>
-        <tr><td>Omega 3</td><td>3.49g</td></tr>
-        <tr><td>Vitamin B6</td><td>0.69mg</td></tr>
-    </table>
-
-</section>
-
-<section class="section">
-    <h2>Ingredients</h2>
-    <p>
-        Wheat Flakes, Corn Flakes, Rolled Oats, Chia Seeds, Pumpkin Seeds,
-        California Almonds, Raisins, Cranberry, Barley Seeds,
-        Sunflower Seeds, Dried Papaya, Natural Antioxidant.
-    </p>
-</section>
-
-<section class="section">
-    <h2>Product View</h2>
-    <div class="gallery">
-        <img src="front.jpg" alt="Front View">
-        <img src="back.jpg" alt="Back View">
+    <div>
+      <table class="nutri-table" aria-label="Nutrition values for selected serving"><tbody>
+        <tr><td>Energy</td><td><span data-nutrient="energy">204.93</span> kcal</td></tr>
+        <tr><td>Total fat</td><td><span data-nutrient="fat">4.15</span> g</td></tr>
+        <tr><td>Carbohydrates</td><td><span data-nutrient="carbs">37.90</span> g</td></tr>
+        <tr><td>Total sugar</td><td><span data-nutrient="sugar">7.20</span> g</td></tr>
+        <tr><td>Dietary fibre</td><td><span data-nutrient="fibre">6.62</span> g</td></tr>
+        <tr><td>Omega 3</td><td><span data-nutrient="omega">1.75</span> g</td></tr>
+        <tr><td>Vitamin B6</td><td><span data-nutrient="b6">0.35</span> mg</td></tr>
+      </tbody></table>
+      <p class="note">Estimates are scaled from the per-100 g figures supplied for this page. Confirm all values, serving guidance and claims against the final product packaging before publishing.</p>
     </div>
+  </div>
 </section>
 
-<footer>
-    © 2026 Good Choice Crunchy Muesli | Made in India 🇮🇳
-</footer>
+<section class="section ingredients reveal" id="ingredients">
+  <div class="section-head"><div class="eyebrow">A blend of goodness</div><h2>Meet the ingredients.</h2><p>Grains, crunchy seeds, nuts and dried fruits come together in one blend.</p></div>
+  <div class="ingredient-grid">
+    <article class="ingredient"><span>🌾</span><div><h3>Wheat flakes</h3><p>Grain goodness</p></div></article>
+    <article class="ingredient"><span>🌽</span><div><h3>Corn flakes</h3><p>Light crunch</p></div></article>
+    <article class="ingredient"><span>🥣</span><div><h3>Rolled oats</h3><p>Breakfast staple</p></div></article>
+    <article class="ingredient"><span>🌱</span><div><h3>Chia seeds</h3><p>Seed nutrition</p></div></article>
+    <article class="ingredient"><span>🎃</span><div><h3>Pumpkin seeds</h3><p>Crunchy texture</p></div></article>
+    <article class="ingredient"><span>🌰</span><div><h3>Almonds</h3><p>Nutty flavour</p></div></article>
+    <article class="ingredient"><span>🍇</span><div><h3>Raisins</h3><p>Naturally sweet</p></div></article>
+    <article class="ingredient"><span>🍒</span><div><h3>Cranberry</h3><p>Fruity flavour</p></div></article>
+    <article class="ingredient"><span>🌻</span><div><h3>Sunflower seeds</h3><p>Extra crunch</p></div></article>
+    <article class="ingredient"><span>🌾</span><div><h3>Barley</h3><p>Grain variety</p></div></article>
+    <article class="ingredient"><span>🍈</span><div><h3>Dried papaya</h3><p>Tropical notes</p></div></article>
+    <article class="ingredient"><span>🍓</span><div><h3>Strawberry flavour</h3><p>Fruity character</p></div></article>
+  </div>
+  <p class="note" style="color:#806872;text-align:center;margin-top:22px">Confirm ingredient names, allergen declarations and flavour ingredients against the final product label before publication.</p>
+</section>
 
+<section class="section gallery reveal" id="product">
+  <div class="section-head"><div class="eyebrow">Inside the pack</div><h2>Goodness from every angle.</h2><p>Take a closer look at the packaging, then add a pack to your demo cart.</p></div>
+  <div class="gallery-grid">
+    <article class="gallery-card">
+      <div class="gallery-image"><img id="frontGallery" src="front.jpg" alt="Good Choice muesli front packaging" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="gallery-placeholder"><span>🌾🍓</span><strong>Front pack image</strong><p>Add a file named front.jpg beside this HTML file.</p></div></div>
+      <h3>The front view</h3><p>Discover the Good Choice Crunchy Muesli pack.</p>
+      <div class="gallery-tools"><button type="button" data-preview="front">Preview front</button><button type="button" data-preview="back">Preview back</button></div>
+    </article>
+    <article class="gallery-card">
+      <div class="gallery-image"><img id="backGallery" src="back.jpg" alt="Good Choice muesli back packaging" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="gallery-placeholder"><span>📦</span><strong>Back pack image</strong><p>Add a file named back.jpg beside this HTML file.</p></div></div>
+      <h3>The back view</h3><p>Check the packaging details and product information.</p>
+      <div class="gallery-tools"><button type="button" data-preview="front">Preview front</button><button type="button" data-preview="back">Preview back</button></div>
+    </article>
+  </div>
+  <div style="text-align:center;margin-top:32px"><button class="btn" id="addToCart" type="button">Add a pack to cart <span aria-hidden="true">＋</span></button><p style="font-size:10px;color:#90747d;margin-top:10px">Demo cart only · set your real price and checkout before accepting orders.</p></div>
+</section>
+
+<section class="section faq reveal" id="faq">
+  <div class="section-head"><div class="eyebrow">A few quick answers</div><h2>Good to know.</h2><p>Helpful details about this product page and the information shown.</p></div>
+  <div class="faq-list">
+    <article class="faq-item"><button class="faq-question" aria-expanded="false"><span>How can I enjoy muesli?</span><span>＋</span></button><div class="faq-answer">Try it with milk, yoghurt or a plant-based alternative. You can also add fresh fruit. Follow the serving guidance on your product pack.</div></article>
+    <article class="faq-item"><button class="faq-question" aria-expanded="false"><span>Are the nutrition values verified?</span><span>＋</span></button><div class="faq-answer">The values on this demo page are based on figures supplied with the original code. Verify them against the final product label or laboratory report before using them commercially.</div></article>
+    <article class="faq-item"><button class="faq-question" aria-expanded="false"><span>Can I place an order on this page?</span><span>＋</span></button><div class="faq-answer">The cart is interactive for demonstration and does not submit a real order or collect payment. Connect a store platform or secure backend to accept real orders.</div></article>
+    <article class="faq-item"><button class="faq-question" aria-expanded="false"><span>Where do I put the product photos?</span><span>＋</span></button><div class="faq-answer">Save your pack photos as front.jpg and back.jpg in the same folder as this HTML file. Keep the file names exactly the same, or update the image paths in the code.</div></article>
+  </div>
+</section>
+
+<section class="final-cta"><div class="eyebrow">Your morning ritual</div><h2>Choose a little more goodness.</h2><p>Bring grains, nuts, seeds and fruity flavour to your breakfast table.</p><a href="#product" class="btn">Explore Good Choice ↗</a></section>
+</main>
+
+<footer><a href="#home" class="logo">GOOD <span>CHOICE.</span></a><p>© <span id="year">2026</span> Good Choice Crunchy Muesli · Made in India 🇮🇳</p><p>Good mornings start here.</p></footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="cart-head"><h2>Your cart <span style="font:600 12px 'DM Sans';color:#806872" id="cartItemLabel">(0 items)</span></h2><button class="close-cart" id="cartClose" aria-label="Close cart">×</button></div>
+  <div class="cart-body" id="cartBody"><div class="cart-empty"><div class="empty-icon">🛍️</div><h3>Your cart is waiting.</h3><p>Add a pack of Good Choice Crunchy Muesli to get started.</p></div></div>
+  <div class="cart-foot"><div class="subtotal"><span>Subtotal</span><span id="cartSubtotal">₹0.00</span></div><p>Demo cart only. No payment is taken and no order is placed.</p><button class="btn" id="checkoutBtn" type="button">Continue to checkout ↗</button><div class="checkout-note" id="checkoutNote" role="status">This is a demo checkout. Add your verified product price and connect a secure order/payment system before launch.</div></div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script>
+(() => {
+  'use strict';
+  // DEMO CONFIG: update price only after confirming your actual pack price.
+  const PRODUCT = { id: 'good-choice-muesli', name: 'Good Choice Crunchy Muesli', price: 0, image: 'front.jpg' };
+  const cart = new Map();
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+  const toast = (message) => {
+    const node = $('#toast');
+    node.textContent = message;
+    node.classList.add('show');
+    window.clearTimeout(toast.timer);
+    toast.timer = window.setTimeout(() => node.classList.remove('show'), 2600);
+  };
+
+  // Mobile menu
+  const menuToggle = $('#menuToggle');
+  const navLinks = $('#navLinks');
+  menuToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    menuToggle.textContent = open ? '×' : '☰';
+  });
+  $$('#navLinks a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation menu');
+    menuToggle.textContent = '☰';
+  }));
+
+  // Scroll reveal with fallback
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    $$('.reveal').forEach(el => observer.observe(el));
+  } else {
+    $$('.reveal').forEach(el => el.classList.add('visible'));
+  }
+
+  // Serving-size calculator, scaled from supplied per-100 g nutrition figures.
+  const nutrition = { energy:409.86, fat:8.30, carbs:75.79, sugar:14.39, fibre:13.24, omega:3.49, b6:0.69 };
+  const serving = $('#servingSize');
+  const fmt = (n) => n.toFixed(2);
+  function updateServing() {
+    const grams = Number(serving.value);
+    const multiplier = grams / 100;
+    $('#servingLabel').textContent = grams;
+    $('#servingRatio').textContent = `${multiplier.toLocaleString('en-IN', {style:'percent', maximumFractionDigits:0})} of 100 g`;
+    $('#energyValue').textContent = Math.round(nutrition.energy * multiplier);
+    $$('[data-nutrient]').forEach(el => {
+      const key = el.dataset.nutrient;
+      el.textContent = fmt(nutrition[key] * multiplier);
+    });
+  }
+  serving.addEventListener('input', updateServing);
+  updateServing();
+
+  // Product gallery preview buttons
+  $$('[data-preview]').forEach(button => button.addEventListener('click', () => {
+    const view = button.dataset.preview;
+    const image = view === 'front' ? $('#frontGallery') : $('#backGallery');
+    if (image && image.style.display !== 'none') {
+      image.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+      image.style.transform = 'scale(1.04)';
+      window.setTimeout(() => image.style.transform = '', 450);
+      toast(`${view === 'front' ? 'Front' : 'Back'} pack preview selected`);
+    } else {
+      toast(`Add ${view}.jpg beside the HTML file to show this photo.`);
+    }
+  }));
+
+  // Cart drawer
+  const drawer = $('#cartDrawer'), overlay = $('#overlay');
+  function openCart() {
+    drawer.classList.add('open'); overlay.classList.add('show'); document.body.classList.add('no-scroll');
+    drawer.setAttribute('aria-hidden', 'false'); $('#cartClose').focus();
+  }
+  function closeCart() {
+    drawer.classList.remove('open'); overlay.classList.remove('show'); document.body.classList.remove('no-scroll');
+    drawer.setAttribute('aria-hidden', 'true'); $('#cartOpen').focus();
+  }
+  $('#cartOpen').addEventListener('click', openCart);
+  $('#cartClose').addEventListener('click', closeCart);
+  overlay.addEventListener('click', closeCart);
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && drawer.classList.contains('open')) closeCart(); });
+
+  function addProduct() {
+    const existing = cart.get(PRODUCT.id) || { ...PRODUCT, quantity: 0 };
+    existing.quantity += 1;
+    cart.set(PRODUCT.id, existing);
+    renderCart();
+    toast('Added to your demo cart 🛍️');
+  }
+  $('#addToCart').addEventListener('click', () => { addProduct(); openCart(); });
+
+  function renderCart() {
+    const items = [...cart.values()];
+    const quantity = items.reduce((sum, item) => sum + item.quantity, 0);
+    $('#cartCount').textContent = quantity;
+    $('#cartItemLabel').textContent = `(${quantity} ${quantity === 1 ? 'item' : 'items'})`;
+    $('#cartSubtotal').textContent = items.reduce((sum, item) => sum + item.price * item.quantity, 0).toLocaleString('en-IN', { style:'currency', currency:'INR' });
+    const body = $('#cartBody');
+    if (!items.length) {
+      body.innerHTML = '<div class="cart-empty"><div class="empty-icon">🛍️</div><h3>Your cart is waiting.</h3><p>Add a pack of Good Choice Crunchy Muesli to get started.</p></div>';
+      return;
+    }
+    body.innerHTML = items.map(item => `
+      <article class="cart-item">
+        <div class="cart-thumb"><img src="${item.image}" alt="" onerror="this.style.display='none';this.parentElement.textContent='🌾🍓'"></div>
+        <div><h3>${item.name}</h3><p>${item.price > 0 ? item.price.toLocaleString('en-IN',{style:'currency',currency:'INR'}) : 'Price to be confirmed'}</p>
+          <div class="qty-control"><button type="button" data-action="minus" aria-label="Decrease quantity">−</button><span>${item.quantity}</span><button type="button" data-action="plus" aria-label="Increase quantity">+</button></div>
+          <button class="remove-item" type="button" data-action="remove">Remove</button>
+        </div>
+        <strong style="font-size:11px;color:var(--wine)">${item.price > 0 ? (item.price * item.quantity).toLocaleString('en-IN',{style:'currency',currency:'INR'}) : '—'}</strong>
+      </article>`).join('');
+    body.querySelectorAll('[data-action]').forEach(button => button.addEventListener('click', () => {
+      const item = cart.get(PRODUCT.id);
+      if (!item) return;
+      const action = button.dataset.action;
+      if (action === 'plus') item.quantity += 1;
+      if (action === 'minus') item.quantity -= 1;
+      if (action === 'remove' || item.quantity <= 0) cart.delete(PRODUCT.id);
+      else cart.set(PRODUCT.id, item);
+      renderCart();
+    }));
+  }
+  $('#checkoutBtn').addEventListener('click', () => {
+    $('#checkoutNote').classList.add('show');
+    if (cart.size === 0) toast('Your cart is empty — add a pack first.');
+  });
+
+  // FAQ accordion
+  $$('.faq-question').forEach(button => button.addEventListener('click', () => {
+    const item = button.closest('.faq-item');
+    const open = item.classList.toggle('open');
+    button.setAttribute('aria-expanded', String(open));
+  }));
+
+  // Back-to-top and footer year
+  const backTop = $('#backTop');
+  window.addEventListener('scroll', () => backTop.classList.toggle('show', window.scrollY > 500), { passive:true });
+  backTop.addEventListener('click', () => window.scrollTo({ top:0, behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
+  $('#year').textContent = new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
