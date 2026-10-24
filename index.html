@@ -162,8 +162,8 @@ footer .logo{color:white}footer p{font-size:10px;color:#d9b9c6}
     <div class="orbit" aria-hidden="true"></div>
     <div class="float-label label-one">🌾 Multigrain blend<small>Made for breakfast moments</small></div>
     <div class="product-wrap">
-      <img class="main-product-image" src="front.jpg" alt="Good Choice Crunchy Muesli front pack" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-      <div class="product-placeholder"><div class="grain">🌾🍓</div><h2>GOOD CHOICE</h2><p>Crunchy Muesli</p><small>Place your front.jpg pack image beside this HTML file.</small></div>
+      <img class="main-product-image" src="front.jpg.png" alt="Good Choice Crunchy Muesli front pack" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+      <div class="product-placeholder"><div class="grain">🌾🍓</div><h2>GOOD CHOICE</h2><p>Crunchy Muesli</p><small>Place your front.jpg.png pack image beside this HTML file.</small></div>
     </div>
     <div class="float-label label-two">🍓 Fruity flavour<small>Cranberry & strawberry</small></div>
   </div>
@@ -231,7 +231,7 @@ footer .logo{color:white}footer p{font-size:10px;color:#d9b9c6}
   <div class="section-head"><div class="eyebrow">Inside the pack</div><h2>Goodness from every angle.</h2><p>Take a closer look at the packaging, then add a pack to your demo cart.</p></div>
   <div class="gallery-grid">
     <article class="gallery-card">
-      <div class="gallery-image"><img id="frontGallery" src="front.jpg" alt="Good Choice muesli front packaging" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="gallery-placeholder"><span>🌾🍓</span><strong>Front pack image</strong><p>Add a file named front.jpg beside this HTML file.</p></div></div>
+      <div class="gallery-image"><img id="frontGallery" src="front.jpg.png" alt="Good Choice muesli front packaging" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="gallery-placeholder"><span>🌾🍓</span><strong>Front pack image</strong><p>Add a file named front.jpg.png beside this HTML file.</p></div></div>
       <h3>The front view</h3><p>Discover the Good Choice Crunchy Muesli pack.</p>
       <div class="gallery-tools"><button type="button" data-preview="front">Preview front</button><button type="button" data-preview="back">Preview back</button></div>
     </article>
@@ -250,7 +250,7 @@ footer .logo{color:white}footer p{font-size:10px;color:#d9b9c6}
     <article class="faq-item"><button class="faq-question" aria-expanded="false"><span>How can I enjoy muesli?</span><span>＋</span></button><div class="faq-answer">Try it with milk, yoghurt or a plant-based alternative. You can also add fresh fruit. Follow the serving guidance on your product pack.</div></article>
     <article class="faq-item"><button class="faq-question" aria-expanded="false"><span>Are the nutrition values verified?</span><span>＋</span></button><div class="faq-answer">The values on this demo page are based on figures supplied with the original code. Verify them against the final product label or laboratory report before using them commercially.</div></article>
     <article class="faq-item"><button class="faq-question" aria-expanded="false"><span>Can I place an order on this page?</span><span>＋</span></button><div class="faq-answer">The cart is interactive for demonstration and does not submit a real order or collect payment. Connect a store platform or secure backend to accept real orders.</div></article>
-    <article class="faq-item"><button class="faq-question" aria-expanded="false"><span>Where do I put the product photos?</span><span>＋</span></button><div class="faq-answer">Save your pack photos as front.jpg and back.jpg in the same folder as this HTML file. Keep the file names exactly the same, or update the image paths in the code.</div></article>
+    <article class="faq-item"><button class="faq-question" aria-expanded="false"><span>Where do I put the product photos?</span><span>＋</span></button><div class="faq-answer">Save your pack photos as front.jpg.png and back.jpg in the same folder as this HTML file. Keep the file names exactly the same, or update the image paths in the code.</div></article>
   </div>
 </section>
 
@@ -272,7 +272,7 @@ footer .logo{color:white}footer p{font-size:10px;color:#d9b9c6}
 (() => {
   'use strict';
   // DEMO CONFIG: update price only after confirming your actual pack price.
-  const PRODUCT = { id: 'good-choice-muesli', name: 'Good Choice Crunchy Muesli', price: 0, image: 'front.jpg' };
+  const PRODUCT = { id: 'good-choice-muesli', name: 'Good Choice Crunchy Muesli', price: 0, image: 'front.jpg.png' };
   const cart = new Map();
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
